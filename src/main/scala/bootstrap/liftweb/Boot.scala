@@ -18,7 +18,7 @@ import net.liftmodules.JQueryModule
   * to modify lift's environment
   */
 class Boot {
-  def boot {
+  def boot(): Unit = {
 
     // where to search snippet
     LiftRules.addToPackages("code")
