@@ -1,0 +1,43 @@
+*.class
+*.log
+.idea
+projectFilesBackup
+
+# sbt specific
+target/
+lib_managed/
+src_managed/
+project/boot/
+project/plugins/project/
+
+# Scala-IDE specific
+.scala_dependencies
+.settings
+/.classpath
+/.project
+/.cache
+
+# generated stuff
+/lift_proto.db.h2.db
+/lift_proto.db.lock.db
+
+pmip/stats.yaml
+/.target
+/logs
+tmp/
+/fulfilment/
+
+# Test artifacts
+/thingyMaJig.pdf
+
+# ensime
+.ensime
+.ensime_cache
+.ensime_lucene
+
+coverage/
+ansible/.vagrant
+/.target
+
+#OS X
+.DS_Store
