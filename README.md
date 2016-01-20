@@ -1,5 +1,7 @@
 # Lift Starter
 
+Install [SBT](http://www.scala-sbt.org/download.html)
+
 On the command line run 
   sbt
 
