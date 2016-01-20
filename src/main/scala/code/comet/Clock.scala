@@ -27,7 +27,8 @@ class Clock extends CometActor {
       // send a little Javascript to the browser to set the contents of
       // the element with an id of 'time' to the current time.
       partialUpdate(SetHtml("time", Text(now.toString)))
-      // schedule an update in 10 seconds
+      
+      // schedule another update in 1 second
       Schedule.schedule(this, Tick, 1000L)
     }
   }
