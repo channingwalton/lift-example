@@ -4,7 +4,7 @@ Install [SBT](http://www.scala-sbt.org/download.html)
 
 Download this project by cloning it or using the zip download link.
 
-On the command line run change directory to the project root
+On the command line run change directory to the project root and run:
 ```
   sbt
 ```
