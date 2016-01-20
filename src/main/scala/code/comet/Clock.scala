@@ -23,6 +23,9 @@ class Clock extends CometActor {
   override def lowPriority : PartialFunction[Any, Unit] = {
     case Tick => {
       println("Got tick " + new Date());
+      
+      // send a little Javascript to the browser to set the contents of
+      // the element with an id of 'time' to the current time.
       partialUpdate(SetHtml("time", Text(now.toString)))
       // schedule an update in 10 seconds
       Schedule.schedule(this, Tick, 1000L)
