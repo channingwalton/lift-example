@@ -3,13 +3,12 @@ package bootstrap.liftweb
 import net.liftweb._
 import util._
 import Helpers._
-
 import common._
 import http._
 import js.jquery.JQueryArtifacts
 import sitemap._
 import Loc._
-
+import code.rest.RestExample
 import net.liftmodules.JQueryModule
 
 
@@ -36,6 +35,8 @@ class Boot {
       Menu(Loc("Static", Link(List("static"), true, "/static/index"), "Static Content")))
 
     LiftRules.setSiteMap(sitemap)
+
+    LiftRules.statelessDispatch.append(RestExample)
 
     //Init the jQuery module, see http://liftweb.net/jquery for more information.
     LiftRules.jsArtifacts = JQueryArtifacts
