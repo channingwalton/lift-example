@@ -1,7 +1,5 @@
 package code.comet
 
-import java.util.Date
-
 import net.liftweb.common.Full
 import net.liftweb.http.{CometActor, RenderOut}
 import net.liftweb.http.js.JsCmds.SetHtml
