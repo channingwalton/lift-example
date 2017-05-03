@@ -27,14 +27,14 @@ class Boot {
     LiftRules.addToPackages("code")
 
     // Build SiteMap
-    def sitemap = SiteMap(
+    val siteMap = SiteMap(
       Menu.i("Home") / "index",
 
       // more complex because this menu allows anything in the
       // /static path to be visible
       Menu(Loc("Static", Link(List("static"), true, "/static/index"), "Static Content")))
 
-    LiftRules.setSiteMap(sitemap)
+    LiftRules.setSiteMap(siteMap)
 
     LiftRules.statelessDispatch.append(RestExample)
 

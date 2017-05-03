@@ -1,6 +1,5 @@
 package code.comet
 
-import net.liftweb.common.Full
 import net.liftweb.http.{CometActor, RenderOut}
 import net.liftweb.http.js.JsCmds.SetHtml
 import net.liftweb.util.Schedule
@@ -10,24 +9,25 @@ import scala.xml.{Elem, Text}
 
 class Clock extends CometActor {
 
-  // schedule a ping every 10 seconds so we redraw
-  Schedule.schedule(this, Tick, 1000L)
+  case object Tick
 
-  override def defaultPrefix = Full("clk")
+  // schedule a Tick periodically
+  private val updatePeriod = 1000L
+  Schedule.schedule(this, Tick, updatePeriod)
 
-  def render: RenderOut = "time" #> timeSpan
+  def render: RenderOut =
+    "time" #> timeSpan
 
-  def timeSpan: Elem = <span id="time">{now}</span>
+  def timeSpan: Elem =
+    <span id="time">{now}</span>
 
   override def lowPriority : PartialFunction[Any, Unit] = {
-    case Tick => {
+    case Tick =>
       // send a little Javascript to the browser to set the contents of
       // the element with an id of 'time' to the current time.
       partialUpdate(SetHtml("time", Text(now.toString)))
       
       // schedule another update in 1 second
-      Schedule.schedule(this, Tick, 1000L)
-    }
+      Schedule.schedule(this, Tick, updatePeriod)
   }
 }
-case object Tick
