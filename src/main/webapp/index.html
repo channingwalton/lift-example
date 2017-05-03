@@ -7,9 +7,18 @@
   <body class="lift:content_id=main">
     <div id="main" class="lift:surround?with=default;at=content">
       <h2>Welcome to Lift!</h2>
-      <lift:comet type="Clock" name="Other">
+      <h3>Snippet</h3>
+      Here is a snippet with an ajax button:
+      <div data-lift="lift:MySnippet">
+        <button id="button">Click Me!</button>
+        <div id="result">--</div>
+      </div>
+
+      <hr/>
+      <h3>Comet</h3>
+      <div data-lift="comet?type=Clock">
         Current Time: <clk:time>Missing Clock</clk:time>
-      </lift:comet>
+      </div>
     </div>
   </body>
 </html>

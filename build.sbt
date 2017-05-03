@@ -2,16 +2,16 @@ name := "lift-example"
 
 version := "1.0"
 
-scalaVersion := "2.11.7"
+scalaVersion := "2.11.11"
 
 scalaBinaryVersion := "2.11"
 
-val jettyVersion = "9.3.6.v20151106"
+val jettyVersion = "9.4.4.v20170414"
 
 libraryDependencies ++= Seq(
   "org.scala-lang.modules" %% "scala-xml"              % "1.0.3",
-  "net.liftweb"            %% "lift-webkit"            % "2.6.2",
-  "net.liftmodules"        %% "lift-jquery-module_2.6" % "2.8",
+  "net.liftweb"            %% "lift-webkit"            % "2.6.3",
+  "net.liftmodules"        %% "lift-jquery-module_2.6" % "2.10",
   "org.eclipse.jetty"       % "jetty-webapp"           % jettyVersion,
   "org.eclipse.jetty"       % "jetty-plus"             % jettyVersion,
   "org.eclipse.jetty"       % "jetty-servlets"         % jettyVersion
