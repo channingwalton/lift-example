@@ -32,9 +32,12 @@ class IncrementalLoad extends CometActor {
       val (chunk, rest) = data.splitAt(10)
       val html = chunk.map(i ⇒ <div>Row{i}</div>)
 
-      // send the chunk
+      // send the chunk to the browser
+      // appending it as a child to the div
+      // with an id of "theTable"
       partialUpdate(appendChild("theTable", html))
 
+      // more to do?
       if (rest.nonEmpty) this ! Rows(rest)
     }
   }
