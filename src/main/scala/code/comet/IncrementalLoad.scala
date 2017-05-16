@@ -30,7 +30,7 @@ class IncrementalLoad extends CometActor {
 
     case Rows(data) ⇒ waitForBrowser {
       val (chunk, rest) = data.splitAt(10)
-      val html = chunk.map(i ⇒ <div>Row{i}</div>)
+      val html = chunk.map(i ⇒ <div>Row {i}</div>)
 
       // send the chunk to the browser
       // appending it as a child to the div
