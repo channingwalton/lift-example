@@ -29,6 +29,7 @@ class Boot {
     // Build SiteMap
     val siteMap = SiteMap(
       Menu.i("Home") / "index",
+      Menu.i("Incremental Tables") / "incrementalTables",
 
       // more complex because this menu allows anything in the
       // /static path to be visible
